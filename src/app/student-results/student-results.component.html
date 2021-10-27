@@ -1,0 +1,83 @@
+<h2 style="color: rgb(245, 105, 12); margin: 5px;">Hey {{usersObj.name}}.. Welcome Back!</h2>
+
+<h3>Academics</h3>
+<div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Marks</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>English</td>
+            <td>{{usersObj.English}}</td>
+            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Science</td>
+            <td>{{usersObj.Science}}</td>
+            
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Maths</td>
+            <td>{{usersObj.Maths}}</td> 
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Social</td>
+            <td>{{usersObj.Social}}</td> 
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Hindi</td>
+            <td>{{usersObj.Hindi}}</td> 
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div style="margin-right: 4%;">
+    <h3>Total</h3>
+    <span style="border: solid black;margin-left: 745px;padding: 5px; " class="tot">{{usersObj.Total}}</span> 
+</div>
+<br>
+<hr>
+<h2 style="text-align: center; margin-bottom: 10px;">Other Performances</h2>
+<div style="margin-top: 10px;margin-bottom: 10px; margin-left: 170px; text-align: center;">
+    <div class="card-group" style="margin-top: 10px;">
+        <div class="row " >
+            <div class="col-sm-4">
+              <div class="card others" style="background-color: coral; margin-right: 30px;">
+                <div class="card-body " >
+                  <h5 class="card-title">Attendance</h5>
+                  <p class="card-text">{{usersObj.Attendance}}</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card others" style="background-color: coral; margin-left: 30px;">
+                <div class="card-body">
+                  <h5 class="card-title">FeedBack</h5>
+                  <p class="card-text">{{usersObj.Feedback}}</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card others" style="background-color: coral; margin-left: 60px; width: 200px; height: 90px;" >
+                  <div class="card-body">
+                    <h5 class="card-title">Faculty :{{usersObj.Faculty}} </h5>
+                    <p class="card-text">Contact:{{usersObj.contact}} </p>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+</div>

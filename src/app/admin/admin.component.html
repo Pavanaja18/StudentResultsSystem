@@ -1,0 +1,173 @@
+
+<nav class="navbar">
+  <input type="text" name="class" id="" [(ngModel)]="class" (ngModelChange)="Search()" size="60%" style="border: 2px solid rgb(6, 6, 173);"
+   placeholder="Enter class to View Student Details class wise">
+
+  <button type="button"  mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Add Student</button>
+  
+  
+  
+</nav>
+  
+  <table class="table text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>English</th>
+            <th>Maths</th>
+            <th>Science</th>
+            <th>Social</th>
+            <th>Hindi</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usersObj of myDetails">
+            <td> <button class="btn btn-sm btn-PRIMARY" style="font-size: 100%;" >{{ usersObj.id}}</button></td>
+            <td>{{ usersObj.name}}</td>
+            <td>{{ usersObj.English}}</td>
+            <td>{{ usersObj.Maths}}</td>
+            <td>{{ usersObj.Science}}</td>
+            <td>{{ usersObj.Social}}</td>
+            <td>{{ usersObj.Hindi}}</td>
+            <td>{{ usersObj.Total}}</td>
+            <td class="btn btn-sm btn-PRIMARY delbtn" style="font-size: 100%;" ><span (click)="deleteStudent(usersObj.id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                                                                </td>
+            
+        </tr>
+    </tbody>
+
+</table>
+
+
+  
+
+  <!--MODAL That adds students details-->
+  
+  
+
+  <div style="overflow-y: auto" mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Add a New Student</h4>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="addStudent" (ngSubmit)="add()">
+                <div class="form-group row" style="margin:2%">
+                  <label for="inputRollno" class="col-sm-5 col-form-label">Roll No</label>
+                  <div class="col-sm-5">
+                    <input formControlName="id" type="number" class="form-control" id="inputRollno" placeholder="RollNo">
+                    <span class="text-danger" *ngIf="addStudent.controls['id'].dirty && addStudent.hasError('required','id')">Roll No is required!</span>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin:2%">
+                  <label for="inputPassword3" class="col-sm-5 col-form-label">Password</label>
+                  <div class="col-sm-5">
+                    <input formControlName="password" type="text" class="form-control" id="inputPassword3" placeholder="Password" >
+                    <span class="text-danger" *ngIf="addStudent.controls['password'].dirty && addStudent.hasError('required','password')">Password is required!</span>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Name</label>
+                    <div class="col-sm-5">
+                      <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Name" >
+                      <span class="text-danger" *ngIf="addStudent.controls['name'].dirty && addStudent.hasError('required','name')">Name is required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Class</label>
+                    <div class="col-sm-5">
+                      <input formControlName="class"  type="text" class="form-control" id="inputClass" placeholder="class" >
+                      <span class="text-danger" *ngIf="addStudent.controls['class'].dirty && addStudent.hasError('required','class')">Class is required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">English</label>
+                    <div class="col-sm-5">
+                      <input formControlName="English" type="number" class="form-control" id="inputEnglish" placeholder="English" >
+                      <span class="text-danger" *ngIf="addStudent.controls['English'].dirty && addStudent.hasError('required','English')">English is required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Maths</label>
+                    <div class="col-sm-5">
+                      <input formControlName="Maths" type="number" class="form-control" id="inputMaths" placeholder="Maths" >
+                      <span class="text-danger" *ngIf="addStudent.controls['Maths'].dirty && addStudent.hasError('required','Maths')">Maths marks are required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="Science" class="col-sm-5 col-form-label">Science</label>
+                    <div class="col-sm-5">
+                      <input formControlName="Science"  type="number" class="form-control" id="inputScience" placeholder="Science" >
+                      <span class="text-danger" *ngIf="addStudent.controls['Science'].dirty && addStudent.hasError('required','Science')">Science Marks are required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="Social" class="col-sm-5 col-form-label">Social</label>
+                    <div class="col-sm-5">
+                      <input formControlName="Social" type="number" class="form-control" id="inputSocial" placeholder="Social" >
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Hindi</label>
+                    <div class="col-sm-5">
+                      <input formControlName="Hindi" type="number" class="form-control" id="inputHindi" placeholder="Hindi" >
+                      <span class="text-danger" *ngIf="addStudent.controls['Hindi'].dirty && addStudent.hasError('required','Hindi')">Hindi marks are required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Attendance</label>
+                    <span class="text-danger" *ngIf="addStudent.controls['attendance'].dirty && addStudent.hasError('required','attendance')">Attendance is required!</span>
+                    <div class="col-sm-5">
+                      <input formControlName="attendance" type="text" class="form-control" id="inputAttendance" placeholder="Attendance" >
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Feedback</label>
+                    <div class="col-sm-5">
+                      <input formControlName="feedback" type="text" class="form-control" id="inputFeedback" placeholder="FeedBack" >
+                      <span class="text-danger" *ngIf="addStudent.controls['feedback'].dirty && addStudent.hasError('required','feedback')">Feedback is is required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Faculty</label>
+                    <div class="col-sm-5">
+                      <input formControlName="faculty" type="text" class="form-control" id="inputFaculty" placeholder="faculty" >
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin:2%">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">Contact</label>
+                    <div class="col-sm-5">
+                      <input formControlName="contact" type="number" class="form-control" id="inputcontact" placeholder="contact" >
+                      <span class="text-danger" *ngIf="addStudent.controls['contact'].dirty && addStudent.hasError('required','contact')">Contact is required!</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" style="margin-bottom: 2%;">
+                    <div class="col-sm-10">
+                      <button type="submit" mdbBtn ms-auto color="primary" [disabled]="!addStudent.valid" class="relative waves-light" mdbWavesEffect>Save!</button>
+                    </div>
+                    </div>
+                  </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+        
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+
+
+   
+
+  
+  

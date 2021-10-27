@@ -1,0 +1,95 @@
+
+    
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+
+  .ele1 {
+    background-color: #05534d;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  
+  .ele1:hover {opacity: 1}
+
+  .txt1
+  {
+    color: #f8caca;
+    position: relative;
+    top:220px;
+    left:100px
+  }
+  .active{
+    font-weight: bold;
+}
+.fa,.fas{
+    padding: 2px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 8px;
+    border: 20px;
+    
+}
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+    
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
+  .fa-pinterest {
+    background: #cb2027;
+    color: white;
+    
+  }  
+ /*
+  .icons{
+      text-decoration: none;
+      font-size: 100px;
+  } */
+.icons{
+    position: relative;
+    top:10px
+
+}

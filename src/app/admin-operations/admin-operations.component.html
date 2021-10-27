@@ -1,0 +1,100 @@
+
+<div>
+  <form [formGroup]="updateStudent" (ngSubmit)="update()">
+    <div class="form-group row" style="margin:2%">
+      <label for="inputRollno" class="col-sm-5 col-form-label">Roll No</label>
+      <div class="col-sm-5">
+        <input formControlName="id" type="number" class="form-control" id="inputRollno" >
+        
+      </div>
+    </div>
+    <div class="form-group row" style="margin:2%">
+      <label for="inputPassword3" class="col-sm-5 col-form-label">Password</label>
+      <div class="col-sm-5">
+        <input formControlName="password" type="text" class="form-control" id="inputPassword3"  >
+        
+      </div>
+    </div>
+    <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Name</label>
+        <div class="col-sm-5">
+          <input formControlName="name" type="text" class="form-control" id="inputName"  >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Class</label>
+        <div class="col-sm-5">
+          <input formControlName="class"  type="text" class="form-control" id="inputClass" placeholder="class" >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">English</label>
+        <div class="col-sm-5">
+          <input formControlName="English" type="number" class="form-control" id="inputEnglish" placeholder="English" >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Maths</label>
+        <div class="col-sm-5">
+          <input formControlName="Maths" type="number" class="form-control" id="inputMaths" placeholder="Maths" >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="Science" class="col-sm-5 col-form-label">Science</label>
+        <div class="col-sm-5">
+          <input formControlName="Science"  type="number" class="form-control" id="inputScience" placeholder="Science" >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="Social" class="col-sm-5 col-form-label">Social</label>
+        <div class="col-sm-5">
+          <input formControlName="Social" type="number" class="form-control" id="inputSocial" placeholder="Social" >
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Hindi</label>
+        <div class="col-sm-5">
+          <input formControlName="Hindi" type="number" class="form-control" id="inputHindi" placeholder="Hindi" >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Attendance</label>
+        
+        <div class="col-sm-5">
+          <input formControlName="attendance" type="text" class="form-control" id="inputAttendance" placeholder="Attendance" >
+        </div>
+      </div>
+      
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Feedback</label>
+        <div class="col-sm-5">
+          <input formControlName="feedback" type="text" class="form-control" id="inputFeedback" placeholder="FeedBack" >
+          
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Faculty</label>
+        <div class="col-sm-5">
+          <input formControlName="faculty" type="text" class="form-control" id="inputFaculty" placeholder="faculty" >
+        </div>
+      </div>
+      <div class="form-group row" style="margin:2%">
+        <label for="inputPassword3" class="col-sm-5 col-form-label">Contact</label>
+        <div class="col-sm-5">
+          <input formControlName="contact" type="number" class="form-control" id="inputcontact" placeholder="contact" >
+         
+        </div>
+      </div>
+      <div class="form-group row" style="margin-bottom: 2%;">
+        <div class="col-sm-10">
+          <button type="submit" mdbBtn ms-auto color="primary"  class="relative waves-light" mdbWavesEffect>Save!</button>
+        </div>
+        </div>
+      </form>
+</div>
